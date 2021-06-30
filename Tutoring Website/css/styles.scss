@@ -27,6 +27,7 @@ header {
   height: 6rem;
   width: 100%;
   z-index: 200000;
+
   .navbar {
     height: 100%;
     width: 100%;
@@ -55,6 +56,10 @@ header {
   padding: 1rem;
   position: relative;
   font-family: "Montserrat", sans-serif;
+
+  @media (min-width: $tablet) {
+    padding: 3rem;
+  }
   .landingpage-heading {
     h1 {
       line-height: 2rem;
@@ -81,9 +86,10 @@ header {
       color: white;
       border-radius: 5px;
       transition: all ease 0.3s;
-      button:hover {
-        background-color: $primary-color;
-      }
+    }
+    button:hover {
+      cursor: pointer;
+      transform: scale(1.03);
     }
   }
 }
@@ -92,6 +98,12 @@ header {
   font-family: "Montserrat", sans-serif;
   padding: 1rem;
   margin-top: 5rem;
+
+  @media (min-width: $tablet) {
+    text-align: center;
+    padding: 3rem;
+  }
+
   .testimonial-heading {
     h1 {
       font-size: 1.5rem;
@@ -106,78 +118,81 @@ header {
 }
 
 .user-testimonials {
+  font-family: "Montserrat", sans-serif;
   display: grid;
   grid-template-rows: 25rem 25rem 25rem;
   row-gap: 3rem;
-  margin-top: 1rem;
-  padding: 1rem;
+  margin-top: 3rem;
+  padding: 3rem;
+  max-width: $phone;
+  margin: 0 auto;
+
+  @media (min-width: $tablet) {
+    grid-template-rows: 25rem 25rem 25rem;
+    row-gap: 3rem;
+    max-width: $tablet - 200px;
+    margin-top: 2rem;
+  }
+
+  @media (min-width: $laptop) {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 2rem;
+    max-width: $laptop;
+  }
+
+  @media (min-width: $desktop) {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 2rem;
+    max-width: $desktop;
+  }
 
   .review {
-    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
 
-    p {
-      padding: 1rem;
+    .quote {
       position: relative;
-      top: 5rem;
-      font-size: 1.2rem;
-      line-height: 2rem;
+      overflow: hidden;
+      top: 4rem;
+      height: 50%;
+      width: 100%;
+      padding: 1rem;
+      p {
+        font-size: 1.2rem;
+        line-height: 2rem;
+      }
     }
-
     img {
       position: absolute;
       padding: 1rem;
       float: left;
     }
-    .sub-testimonial-one {
-      position: absolute;
+  }
+  .user-info {
+    display: flex;
+    position: relative;
+    top: 26%;
+    width: 90%;
+    margin: 0 auto;
+    height: 6rem;
+    border-top: 1px solid black;
 
-      background-color: $primary-color;
-      width: 50px;
-      height: 50px;
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
+    .user-img {
+      width: 25%;
+
+      img {
+        border-radius: 50%;
+        margin-top: 0.5rem;
+      }
+    }
+    .user-name {
+      width: 50%;
+
+      h3 {
+        margin-top: 2rem;
+        font-weight: 400;
+        font-size: 1rem;
+      }
     }
   }
 }
-
-//   h1 {
-//     font-size: 1.5rem;
-//     margin-top: 2rem;
-//     color: white;
-//   }
-//   p {
-//     color: white;
-//     margin-top: 2rem;
-//   }
-
-//   .form-container {
-//     border-radius: 5px;
-//     padding: 20px;
-//     position: relative;
-//     margin-top: 10rem;
-//     background-color: $primary-accent-color;
-
-//     input[type="text"],
-//     select,
-//     textarea {
-//       width: 100%; /* Full width */
-//       padding: 12px; /* Some padding */
-//       border: 1px solid #ccc; /* Gray border */
-//       border-radius: 4px; /* Rounded borders */
-//       margin-top: 6px; /* Add a top margin */
-//       margin-bottom: 16px; /* Bottom margin */
-//       resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
-//     }
-//     input[type="submit"] {
-//       background-color: $primary-color;
-//       color: white;
-//       padding: 12px 20px;
-//       border: none;
-//       border-radius: 4px;
-//       cursor: pointer;
-//     }
-//     input[type="submit"]:hover {
-//       background-color: #45a049;
-//     }
-//   }
